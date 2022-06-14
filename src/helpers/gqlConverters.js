@@ -29,6 +29,8 @@ function usecaseRequest2gql(useCase, presence) {
 }
 
 function usecaseResponse2gql(useCase, presence) {
+    if (!useCase.responseSchema) return 'Void'
+    
     let name = requestFieldType2gql(useCase.responseSchema, presence, false)
     return name
 }
